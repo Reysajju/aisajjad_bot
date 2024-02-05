@@ -3,16 +3,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import make_pipeline
 
-# Load the initial dataset
-initial_data = pd.DataFrame({'text': ['Hello', 'Hi', 'How are you?', 'Goodbye'],
-                              'label': ['bot', 'bot', 'bot', 'bot']})
+# Function to update and save the dataset
+def update_and_save_dataset(filename, new_data):
+    existing_data = pd.read_csv(filename)
+    updated_data = pd.concat([existing_data, new_data], ignore_index=True)
+    updated_data.to_csv(filename, index=False)
 
 # Function to train the model and save it
-def train_and_save_model(data):
-    model = make_pipeline(TfidfVectorizer(), MultinomialNB())
-    model.fit(data['text'], data['label'])
-    return model
-
 def train_and_save_model(data):
     model = make_pipeline(TfidfVectorizer(), MultinomialNB())
     
@@ -24,7 +21,7 @@ def train_and_save_model(data):
 
 # Function to interact with the user
 def chatbot():
-    dataset_filename = '/content/datasets.csv'
+    dataset_filename = 'datasets.csv'  # Removed '/content/' as it may not be needed
     model = train_and_save_model(pd.read_csv(dataset_filename))  # Load model from existing dataset
 
     while True:
