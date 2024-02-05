@@ -1,0 +1,39 @@
+text,label
+,
+bot, What's the primary goal of your machine learning model?
+user,Classification of customer churn
+bot,Which features are crucial for your model's prediction?
+user,"Customer age, subscription duration, usage frequency."
+bot,How do you handle missing data in your dataset?
+user,Impute missing values with the mean.
+bot,What type of encoding do you prefer for categorical variables?
+user,One-hot encoding.
+bot,Do you need to scale or normalize your numerical features?
+user,Min-max scaling.
+bot,Are there any outliers in your dataset that need attention?
+user,"Yes, identify and handle outliers."
+bot,What's your strategy for dealing with imbalanced classes?
+user,Using SMOTE for the minority class.
+bot,Is there a need for feature engineering?
+user,Log transformation for skewed features.
+bot,How do you split your dataset into training and testing sets?
+user,80-20 split for training and testing.
+bot,Any specific data augmentation techniques for image data?
+user,"Yes, random rotation for image augmentation."
+bot,hi
+user,"hello, how you doing?"
+bot,"I am good, what about you?"
+user,I am also fine and bit tired
+bot,sorry to hear that you are tired. may I know the reason may be I help you
+user,"I am doing my homework since three hourse, but it is not ending"
+bot,"sorry to hear that you got a lot of homework, take rest and do your homework after being easy"
+user,okay
+bot,yes
+user,assalam o alaikum
+bot,walikum salam
+user,assalamoalaikum
+bot,walikum salam
+user,salam
+bot,walikum salam
+user,how are you?
+bot,"same as yesterday, what about you?"

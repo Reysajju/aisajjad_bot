@@ -1,0 +1,6 @@
+[build]
+  command = "python src/main.py"  # Adjust the command based on your script location
+  functions = "src/functions"     # If you have additional functions, specify the directory
+
+[dev]
+  functions = "src/functions"     # Specify the directory for functions during local development

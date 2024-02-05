@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            overflow-y: scroll;
+            max-height: 400px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="Type your message..." onkeyup="sendMessage(event)">
+    
+    <script>
+        function sendMessage(event) {
+            if (event.key === 'Enter') {
+                const userInput = document.getElementById('user-input').value;
+                displayMessage(userInput, true);
+                
+                // Replace the following line with your logic to send the user input to your Python script
+                // and get the model's response
+                const modelResponse = "This is a placeholder response.";
+
+                displayMessage(modelResponse, false);
+                document.getElementById('user-input').value = '';
+            }
+        }
+
+        function displayMessage(message, isUser) {
+            const chatContainer = document.getElementById('chat-container');
+            const messageElement = document.createElement('div');
+            messageElement.className = isUser ? 'user-message' : 'model-message';
+            messageElement.innerText = message;
+            chatContainer.appendChild(messageElement);
+            
+            // Scroll to the bottom of the chat container to show the latest message
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
